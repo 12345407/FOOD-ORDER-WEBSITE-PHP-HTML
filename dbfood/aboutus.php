@@ -200,13 +200,76 @@ ul li {list-style:none;}
     </div>
 	
 </nav>
+<style>
+.add{
+	
+}
+</style>
 <!--navbar ends-->
 <br><br>
 <div class="container-fluid">
-  <img src="img/about.bmp" width='100%'/>
+  <img src="img\pexels-photo-6287324.jpeg" width='100%' height="550px" />
+  <div class="add" style="color:white; text-align:center; margin-top: -400px; background:black; opacity:0.40;">
+	<h1>We believe in good.</h1>
+	<p style="font-size:25px;" >When we say good, we don’t just mean good food. We also mean the goodness that good food leads to. Good memories, a good temper, a good day, a good burp. And we know that when our food leaves our kitchens, we’re creating all that. It’s rewarding, this belief in good. Now take a look at how we go about it.</p>
+  </div>
 </div>
 <br><br>
-<div class="container-fluid" style="background:black; opacity:0.30;">
+<div class="container-fluid animatedParent " style="background:#F8F9FA; padding-left:40px; margin-top:200px;  height:400px;"> 
+		    
+		      
+			      <div class="row animated fadeIn">
+				      
+					  
+					  <div class="container col-sm-6" style="padding:75px 50px 50px 75px;">
+					    <ul>
+                          <li><h4>No good salad starts with stale lettuce.</h4></li><br>
+						  <li>We’re ruthless about goodness. We have no qualms about tearing up a day-old lettuce leaf (straight from the farm), or steaming a baby (carrot). Cut. Cut. Chop. Chop. Steam. Steam. Stir Stir. While they’re still young and fresh - that’s our motto. It makes the kitchen a better place.</li>
+						  
+						</ul>
+					  </div>
+					  
+					  <div class="col-sm-6" style="">
+					     
+						  <img src="img\th.jpg" alt="" width="100%" height = "400px" style=" margin-top:0;">
+						  
+						  
+						
+					  </div>
+				  </div>
+			 
+			 			 
+		  </div>
+<!-- 2 -->
+		  <div class="container-fluid animatedParent " style="background:#F8F9FA; padding-left:40px; margin-top:20px; "> 
+		    
+		      
+			<div class="row animated fadeIn">
+				
+				
+				
+				
+				<div class="col-sm-6" style="">
+				   
+					<img src="img\menu-momo.jpg" alt="" width="100%" height = "100%" style=" margin-top:0;">
+					
+					
+				  
+				</div>
+
+				<div class="container col-sm-6" style="padding: 70px 40px;">
+				  <ul>
+					<li><h4>There's no point if it isn't fresh when it reaches you.</h4></li><br>
+					<li>Now we might use fresh ingredients, and we might have expert chefs, but if it took an hour and a half for a delicious fresh meal to reach you, it wouldn't be fresh. It wouldn't be delicious either. Our delivery boys are legendary for always being on time, so you don't have to wait (too long) for goodness.</li>
+					
+				  </ul>
+				</div>
+			</div>
+	   
+					
+	</div>
+
+<!-- <div class="container-fluid" style="background:black;margin-top:200px; opacity:0.30;">
 <h1 style="color:white; text-align:center; text-transform:uppercase;">we do this by</h1>
 <h3 style="color:white; text-align:center; text-transform:uppercase;">Helping people discover great places around them.</h3>
 <p style="color:white; text-align:center; font-size:25px;">Our team gathers information from every restaurant on a regular basis to ensure our data is fresh. Our vast community of food lovers share their reviews and photos, so you have all that you need to make an informed choice.</p>
@@ -216,7 +279,7 @@ ul li {list-style:none;}
 
 <h3 style="color:white; text-align:center; text-transform:uppercase;">Enabling restaurants to create amazing experiences.</h3>
 <p style="color:white; text-align:center; font-size:25px;">With dedicated engagement and management tools, we're enabling restaurants to spend more time focusing on food itself, which translates directly to better dining experiences.</p>
-</div>
+</div> -->
 
 <br><br>
 <div class="container-fluid" style="background:white; text-transform:uppercase;padding:20px; border-left:10px solid black;"><h3>locate us</h3></div>
