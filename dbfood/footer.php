@@ -51,6 +51,7 @@
             font-size: 18px;
             height: 45px;
             width: 45px;
+			color:rgb(63, 57, 57);
             display: inline-block;
             text-align: center;
             line-height: 43px;
