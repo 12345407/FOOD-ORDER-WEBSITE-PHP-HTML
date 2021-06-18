@@ -441,21 +441,320 @@ if(isset($message))
 
 
     <!--slider ends-->
+    <style>
+    .text-rated {
+        text-align: center;
+        margin: 5px;
+
+    }
+
+    .text-rated a {
+        padding: 10px;
+
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        color: rgb(63, 59, 59);
+        text-decoration: none;
+    }
+
+    /* .text-rated a:hover {
+        padding: 5px;
+        border-bottom: 2px solid;
+        border-radius: 25px;
+
+    } */
+
+    /* .rate-location {
+        display: flex;
+        border: none;
+        border-bottom: 2px solid;
+        padding: 5px 10px 5px 10px;
+        width: 150px;
+    } */
+    </style>
+
+    <div class="conatiner-fluid">
+        <div class="container">
 
 
+            <h5 class="text-rated"><a href="#top-rated"> Our Top Rated Foods</a></h5>
+
+
+
+        </div>
+        <!-- <h5 class="text-rated"><a href="#top-rated"> Our Top Rated Foods</a></h5> -->
+        <div class="container-fluid" id="top-rated">
+            <div class="row" style="padding:5px; margin:0;">
+                <div class="col-sm-4">
+                    <!-- iten 1 -->
+
+                    <div class="container-fluid rounded" style="border:solid 1px #F0F0F0;">
+                        <!--product container-->
+                        <?php
+	                        $food_id=$arr[0];
+	                        $query=mysqli_query($con,"select tblvendor.fld_email,tblvendor.fld_name,tblvendor.fld_mob,
+	                        tblvendor.fld_phone,tblvendor.fld_address,tblvendor.fld_logo,tbfood.food_id,tbfood.foodname,tbfood.cost,
+	                        tbfood.cuisines,tbfood.paymentmode,tbfood.fldimage from tblvendor inner join
+	                        tbfood on tblvendor.fldvendor_id=tbfood.fldvendor_id where tbfood.food_id='$food_id'");
+	                             while($res=mysqli_fetch_assoc($query))
+	                                  {
+		                                 $hotel_logo= "image/restaurant/".$res['fld_email']."/".$res['fld_logo'];
+		                                 $food_pic= "image/restaurant/".$res['fld_email']."/foodimages/".$res['fldimage'];
+	                                   ?>
+                        <div class="container-fluid">
+                            <div class="container-fluid">
+                                <!--product row container 1-->
+                                <div class="row" style="padding:10px; ">
+                                    <!--hotel logo-->
+                                    <div class="col-sm-2"><img src="<?php echo $hotel_logo; ?>" class="rounded-circle"
+                                            height="50px" width="50px" alt="Cinque Terre"></div>
+                                    <div class="col-sm-5">
+                                        <!--hotelname--> <span
+                                            style="font-family: 'Miriam Libre', sans-serif; font-size:28px;color:#CB202D;"><?php echo $res['fld_name']; ?></span>
+                                    </div>
+                                    <!--ruppee-->
+                                    <div class="col-sm-3"><i style="font-size:20px;"
+                                            class="fas fa-rupee-sign"></i>&nbsp;<span
+                                            style="color:green; font-size:25px;"><?php echo $res['cost']; ?></span>
+                                    </div>
+                                    <form method="post">
+                                        <!--add to cart-->
+                                        <div class="col-sm-2" style="text-align:left;padding:10px; font-size:25px;">
+                                            <button type="submit" name="addtocart"
+                                                value="<?php echo $res['food_id'];?>"><span style="color:green;"><i
+                                                        class="fa fa-shopping-cart"
+                                                        aria-hidden="true"></i></span></button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="container-fluid">
+                                <!--product row container 2-->
+                                <div class="row"
+                                    style="padding:10px;padding-top:0px;padding-right:0px; padding-left:0px;">
+                                    <!--food Image-->
+                                    <div class="col-sm-12"><img src="<?php echo $food_pic; ?>" class="rounded"
+                                            height="250px" width="100%" alt="Cinque Terre"></div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <!--product row container 3-->
+                                <div class="row" style="padding:10px; ">
+                                    <div class="col-sm-6">
+                                        <!--cuisine--> <span>
+                                            <li><?php echo $res['cuisines']; ?></li>
+                                        </span>
+                                        <!--cost--> <span>
+                                            <li><?php echo "Rs".$res['cost']; ?>&nbsp;for 1</li>
+                                        </span>
+                                        <!--deliverytime--> <span>
+                                            <li>Up To 60 Minutes</li>
+                                        </span>
+                                    </div>
+                                    <!--deliverytime-->
+                                    <div class="col-sm-6" style="padding:20px;">
+                                        <h3><?php echo"(" .$res['foodname'].")"?></h3>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <?php
+	                                     }
+	                                    ?>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-4">
+                    <!-- item 2 -->
+
+                    <div class="container-fluid rounded" style="border:solid 1px #F0F0F0;">
+                        <!--product container-->
+                        <?php
+	                        $food_id=$arr[0];
+	                        $query=mysqli_query($con,"select tblvendor.fld_email,tblvendor.fld_name,tblvendor.fld_mob,
+	                        tblvendor.fld_phone,tblvendor.fld_address,tblvendor.fld_logo,tbfood.food_id,tbfood.foodname,tbfood.cost,
+	                        tbfood.cuisines,tbfood.paymentmode,tbfood.fldimage from tblvendor inner join
+	                        tbfood on tblvendor.fldvendor_id=tbfood.fldvendor_id where tbfood.food_id='$food_id'");
+	                             while($res=mysqli_fetch_assoc($query))
+	                                  {
+		                                 $hotel_logo= "image/restaurant/".$res['fld_email']."/".$res['fld_logo'];
+		                                 $food_pic= "image/restaurant/".$res['fld_email']."/foodimages/".$res['fldimage'];
+	                                   ?>
+                        <div class="container-fluid">
+                            <div class="container-fluid">
+                                <!--product row container 1-->
+                                <div class="row" style="padding:10px; ">
+                                    <!--hotel logo-->
+                                    <div class="col-sm-2"><img src="<?php echo $hotel_logo; ?>" class="rounded-circle"
+                                            height="50px" width="50px" alt="Cinque Terre"></div>
+                                    <div class="col-sm-5">
+                                        <!--hotelname--> <span
+                                            style="font-family: 'Miriam Libre', sans-serif; font-size:28px;color:#CB202D;"><?php echo $res['fld_name']; ?></span>
+                                    </div>
+                                    <!--ruppee-->
+                                    <div class="col-sm-3"><i style="font-size:20px;"
+                                            class="fas fa-rupee-sign"></i>&nbsp;<span
+                                            style="color:green; font-size:25px;"><?php echo $res['cost']; ?></span>
+                                    </div>
+                                    <form method="post">
+                                        <!--add to cart-->
+                                        <div class="col-sm-2" style="text-align:left;padding:10px; font-size:25px;">
+                                            <button type="submit" name="addtocart"
+                                                value="<?php echo $res['food_id'];?>"><span style="color:green;"><i
+                                                        class="fa fa-shopping-cart"
+                                                        aria-hidden="true"></i></span></button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="container-fluid">
+                                <!--product row container 2-->
+                                <div class="row"
+                                    style="padding:10px;padding-top:0px;padding-right:0px; padding-left:0px;">
+                                    <!--food Image-->
+                                    <div class="col-sm-12"><img src="<?php echo $food_pic; ?>" class="rounded"
+                                            height="250px" width="100%" alt="Cinque Terre"></div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <!--product row container 3-->
+                                <div class="row" style="padding:10px; ">
+                                    <div class="col-sm-6">
+                                        <!--cuisine--> <span>
+                                            <li><?php echo $res['cuisines']; ?></li>
+                                        </span>
+                                        <!--cost--> <span>
+                                            <li><?php echo "Rs".$res['cost']; ?>&nbsp;for 1</li>
+                                        </span>
+                                        <!--deliverytime--> <span>
+                                            <li>Up To 60 Minutes</li>
+                                        </span>
+                                    </div>
+                                    <!--deliverytime-->
+                                    <div class="col-sm-6" style="padding:20px;">
+                                        <h3><?php echo"(" .$res['foodname'].")"?></h3>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <?php
+	                                     }
+	                                    ?>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-4">
+                    <!-- item 3 -->
+
+                    <div class="container-fluid rounded" style="border:solid 1px #F0F0F0;">
+                        <!--product container-->
+                        <?php
+	                        $food_id=$arr[0];
+	                        $query=mysqli_query($con,"select tblvendor.fld_email,tblvendor.fld_name,tblvendor.fld_mob,
+	                        tblvendor.fld_phone,tblvendor.fld_address,tblvendor.fld_logo,tbfood.food_id,tbfood.foodname,tbfood.cost,
+	                        tbfood.cuisines,tbfood.paymentmode,tbfood.fldimage from tblvendor inner join
+	                        tbfood on tblvendor.fldvendor_id=tbfood.fldvendor_id where tbfood.food_id='$food_id'");
+	                             while($res=mysqli_fetch_assoc($query))
+	                                  {
+		                                 $hotel_logo= "image/restaurant/".$res['fld_email']."/".$res['fld_logo'];
+		                                 $food_pic= "image/restaurant/".$res['fld_email']."/foodimages/".$res['fldimage'];
+	                                   ?>
+                        <div class="container-fluid">
+                            <div class="container-fluid">
+                                <!--product row container 1-->
+                                <div class="row" style="padding:10px; ">
+                                    <!--hotel logo-->
+                                    <div class="col-sm-2"><img src="<?php echo $hotel_logo; ?>" class="rounded-circle"
+                                            height="50px" width="50px" alt="Cinque Terre"></div>
+                                    <div class="col-sm-5">
+                                        <!--hotelname--> <span
+                                            style="font-family: 'Miriam Libre', sans-serif; font-size:28px;color:#CB202D;"><?php echo $res['fld_name']; ?></span>
+                                    </div>
+                                    <!--ruppee-->
+                                    <div class="col-sm-3"><i style="font-size:20px;"
+                                            class="fas fa-rupee-sign"></i>&nbsp;<span
+                                            style="color:green; font-size:25px;"><?php echo $res['cost']; ?></span>
+                                    </div>
+                                    <form method="post">
+                                        <!--add to cart-->
+                                        <div class="col-sm-2" style="text-align:left;padding:10px; font-size:25px;">
+                                            <button type="submit" name="addtocart"
+                                                value="<?php echo $res['food_id'];?>"><span style="color:green;"><i
+                                                        class="fa fa-shopping-cart"
+                                                        aria-hidden="true"></i></span></button>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                            <div class="container-fluid">
+                                <!--product row container 2-->
+                                <div class="row"
+                                    style="padding:10px;padding-top:0px;padding-right:0px; padding-left:0px;">
+                                    <!--food Image-->
+                                    <div class="col-sm-12"><img src="<?php echo $food_pic; ?>" class="rounded"
+                                            height="250px" width="100%" alt="Cinque Terre"></div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <!--product row container 3-->
+                                <div class="row" style="padding:10px; ">
+                                    <div class="col-sm-6">
+                                        <!--cuisine--> <span>
+                                            <li><?php echo $res['cuisines']; ?></li>
+                                        </span>
+                                        <!--cost--> <span>
+                                            <li><?php echo "Rs".$res['cost']; ?>&nbsp;for 1</li>
+                                        </span>
+                                        <!--deliverytime--> <span>
+                                            <li>Up To 60 Minutes</li>
+                                        </span>
+                                    </div>
+                                    <!--deliverytime-->
+                                    <div class="col-sm-6" style="padding:20px;">
+                                        <h3><?php echo"(" .$res['foodname'].")"?></h3>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <?php
+	                                     }
+	                                    ?>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
 
 
     <!--container 1 starts-->
-
-    <br><br>
+    <HR>
+    </HR>
+    <br>
     <div class="container-fluid">
         <div class="row">
 
             <div class="col-sm-6">
-                <div class="container-fluid">
+                <!-- <div class="container-fluid">
                     <img src="img/istockphoto-516324258-612x612.jpg" height="300px" width="100%">
                 </div>
                 <div class="container">
@@ -466,15 +765,90 @@ if(isset($message))
                         leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
                         1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
                         with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div> -->
+
+                <div class="container-fluid rounded" style="border:solid 1px #F0F0F0;">
+                    <!--product container-->
+                    <?php
+	                        $food_id=$arr[0];
+	                        $query=mysqli_query($con,"select tblvendor.fld_email,tblvendor.fld_name,tblvendor.fld_mob,
+	                        tblvendor.fld_phone,tblvendor.fld_address,tblvendor.fld_logo,tbfood.food_id,tbfood.foodname,tbfood.cost,
+	                        tbfood.cuisines,tbfood.paymentmode,tbfood.fldimage from tblvendor inner join
+	                        tbfood on tblvendor.fldvendor_id=tbfood.fldvendor_id where tbfood.food_id='$food_id'");
+	                             while($res=mysqli_fetch_assoc($query))
+	                                  {
+		                                 $hotel_logo= "image/restaurant/".$res['fld_email']."/".$res['fld_logo'];
+		                                 $food_pic= "image/restaurant/".$res['fld_email']."/foodimages/".$res['fldimage'];
+	                                   ?>
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <!--product row container 1-->
+                            <div class="row" style="padding:10px; ">
+                                <!--hotel logo-->
+                                <div class="col-sm-2"><img src="<?php echo $hotel_logo; ?>" class="rounded-circle"
+                                        height="50px" width="50px" alt="Cinque Terre"></div>
+                                <div class="col-sm-5">
+                                    <!--hotelname--> <span
+                                        style="font-family: 'Miriam Libre', sans-serif; font-size:28px;color:#CB202D;"><?php echo $res['fld_name']; ?></span>
+                                </div>
+                                <!--ruppee-->
+                                <div class="col-sm-3"><i style="font-size:20px;"
+                                        class="fas fa-rupee-sign"></i>&nbsp;<span
+                                        style="color:green; font-size:25px;"><?php echo $res['cost']; ?></span></div>
+                                <form method="post">
+                                    <!--add to cart-->
+                                    <div class="col-sm-2" style="text-align:left;padding:10px; font-size:25px;"><button
+                                            type="submit" name="addtocart" value="<?php echo $res['food_id'];?>"><span
+                                                style="color:green;"><i class="fa fa-shopping-cart"
+                                                    aria-hidden="true"></i></span></button></div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="container-fluid">
+                            <!--product row container 2-->
+                            <div class="row" style="padding:10px;padding-top:0px;padding-right:0px; padding-left:0px;">
+                                <!--food Image-->
+                                <div class="col-sm-12"><img src="<?php echo $food_pic; ?>" class="rounded"
+                                        height="250px" width="100%" alt="Cinque Terre"></div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <!--product row container 3-->
+                            <div class="row" style="padding:10px; ">
+                                <div class="col-sm-6">
+                                    <!--cuisine--> <span>
+                                        <li><?php echo $res['cuisines']; ?></li>
+                                    </span>
+                                    <!--cost--> <span>
+                                        <li><?php echo "Rs".$res['cost']; ?>&nbsp;for 1</li>
+                                    </span>
+                                    <!--deliverytime--> <span>
+                                        <li>Up To 60 Minutes</li>
+                                    </span>
+                                </div>
+                                <!--deliverytime-->
+                                <div class="col-sm-6" style="padding:20px;">
+                                    <h3><?php echo"(" .$res['foodname'].")"?></h3>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <?php
+	                                     }
+	                                    ?>
+                    </div>
                 </div>
 
             </div>
 
             <div class="col-sm-6">
-                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
                 <div class="container-fluid rounded" style="border:solid 1px #F0F0F0;">
                     <?php
-	   $food_id=$arr[0];
+	   $food_id=$arr[1];
 	  $query=mysqli_query($con,"select tblvendor.fld_email,tblvendor.fld_name,tblvendor.fld_mob,
 	  tblvendor.fld_phone,tblvendor.fld_address,tblvendor.fldvendor_id,tblvendor.fld_logo,tbfood.food_id,tbfood.foodname,tbfood.cost,
 	  tbfood.cuisines,tbfood.paymentmode,tbfood.fldimage from tblvendor inner join
@@ -563,11 +937,11 @@ if(isset($message))
             <!--main row-->
             <div class="col-sm-6">
                 <!--main row 2 left-->
-                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <!-- <br><br><br><br><br><br><br><br><br><br><br><br> -->
                 <div class="container-fluid rounded" style="border:solid 1px #F0F0F0;">
                     <!--product container-->
                     <?php
-	                        $food_id=$arr[1];
+	                        $food_id=$arr[2];
 	                        $query=mysqli_query($con,"select tblvendor.fld_email,tblvendor.fld_name,tblvendor.fld_mob,
 	                        tblvendor.fld_phone,tblvendor.fld_address,tblvendor.fld_logo,tbfood.food_id,tbfood.foodname,tbfood.cost,
 	                        tbfood.cuisines,tbfood.paymentmode,tbfood.fldimage from tblvendor inner join
@@ -644,12 +1018,12 @@ if(isset($message))
 
             <!--main row 2 left right starts-->
             <div class="col-sm-6">
-                <div class="container-fluid">
+                <!-- <div class="container-fluid">
                     <img src="img/pastaveg_640x480.jpg" height="300px" width="100%">
-                    <!--image-->
+                   
                 </div>
                 <div class="container">
-                    <!--paragraph content-->
+                   
                     <p style="font-family: 'Lobster', cursive; font-weight:light; font-size:25px;">Lorem Ipsum is simply
                         dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                         standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -657,6 +1031,81 @@ if(isset($message))
                         leap into electronic typesetting, remaining essentially unchanged. It was popularised in the
                         1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
                         with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div> -->
+
+                <div class="container-fluid rounded" style="border:solid 1px #F0F0F0;">
+                    <!--product container-->
+                    <?php
+	                        $food_id=$arr[3];
+	                        $query=mysqli_query($con,"select tblvendor.fld_email,tblvendor.fld_name,tblvendor.fld_mob,
+	                        tblvendor.fld_phone,tblvendor.fld_address,tblvendor.fld_logo,tbfood.food_id,tbfood.foodname,tbfood.cost,
+	                        tbfood.cuisines,tbfood.paymentmode,tbfood.fldimage from tblvendor inner join
+	                        tbfood on tblvendor.fldvendor_id=tbfood.fldvendor_id where tbfood.food_id='$food_id'");
+	                             while($res=mysqli_fetch_assoc($query))
+	                                  {
+		                                 $hotel_logo= "image/restaurant/".$res['fld_email']."/".$res['fld_logo'];
+		                                 $food_pic= "image/restaurant/".$res['fld_email']."/foodimages/".$res['fldimage'];
+	                                   ?>
+                    <div class="container-fluid">
+                        <div class="container-fluid">
+                            <!--product row container 1-->
+                            <div class="row" style="padding:10px; ">
+                                <!--hotel logo-->
+                                <div class="col-sm-2"><img src="<?php echo $hotel_logo; ?>" class="rounded-circle"
+                                        height="50px" width="50px" alt="Cinque Terre"></div>
+                                <div class="col-sm-5">
+                                    <!--hotelname--> <span
+                                        style="font-family: 'Miriam Libre', sans-serif; font-size:28px;color:#CB202D;"><?php echo $res['fld_name']; ?></span>
+                                </div>
+                                <!--ruppee-->
+                                <div class="col-sm-3"><i style="font-size:20px;"
+                                        class="fas fa-rupee-sign"></i>&nbsp;<span
+                                        style="color:green; font-size:25px;"><?php echo $res['cost']; ?></span></div>
+                                <form method="post">
+                                    <!--add to cart-->
+                                    <div class="col-sm-2" style="text-align:left;padding:10px; font-size:25px;"><button
+                                            type="submit" name="addtocart" value="<?php echo $res['food_id'];?>"><span
+                                                style="color:green;"><i class="fa fa-shopping-cart"
+                                                    aria-hidden="true"></i></span></button></div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="container-fluid">
+                            <!--product row container 2-->
+                            <div class="row" style="padding:10px;padding-top:0px;padding-right:0px; padding-left:0px;">
+                                <!--food Image-->
+                                <div class="col-sm-12"><img src="<?php echo $food_pic; ?>" class="rounded"
+                                        height="250px" width="100%" alt="Cinque Terre"></div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <!--product row container 3-->
+                            <div class="row" style="padding:10px; ">
+                                <div class="col-sm-6">
+                                    <!--cuisine--> <span>
+                                        <li><?php echo $res['cuisines']; ?></li>
+                                    </span>
+                                    <!--cost--> <span>
+                                        <li><?php echo "Rs".$res['cost']; ?>&nbsp;for 1</li>
+                                    </span>
+                                    <!--deliverytime--> <span>
+                                        <li>Up To 60 Minutes</li>
+                                    </span>
+                                </div>
+                                <!--deliverytime-->
+                                <div class="col-sm-6" style="padding:20px;">
+                                    <h3><?php echo"(" .$res['foodname'].")"?></h3>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <?php
+	                                     }
+	                                    ?>
+                    </div>
                 </div>
             </div>
             <!--main row 2 left right ends-->
